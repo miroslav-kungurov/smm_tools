@@ -34,7 +34,7 @@ pip install -U tgcrypto
     
 3. Вводим пароль (опционально)
     
-Дубликаты постов не считаются (когда больше 1-й картинке в посте, пост мультиплицируется), удаленные посты (их ID) пропускаются.
+Дубликаты постов не считаются (когда больше 1-й картинки в посте, пост повторяется с разными ID  и одинаковой датой публикации), удаленные посты (их ID) пропускаются.
   
 
 ![](https://lh7-us.googleusercontent.com/docsz/AD_4nXeZ8HKE_NepvXOPSvCDCrJYc_ulxjjCHhPsLL60UOCaH38yY8DAJprsKdFpREST7takhoJoQV0osz1JlHl2v9sniXuv3lu0DomgDoNteQeCvg4n2MAtv5R_zLrIRMfbTi_0mJG2-CIK7NL2PaRYgbE7j1xh?key=2GhdH-Aip7wH5rSx552uZQ)
