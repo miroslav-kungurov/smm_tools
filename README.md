@@ -17,7 +17,7 @@ pip install -U tgcrypto
 
 ![](https://lh7-us.googleusercontent.com/docsz/AD_4nXfLklX5n4p93z6wuZ_5lxuxlmRRQWWpwVjwlKZwH-jbR7xp0N1XrjRAIVG62RwaeoY2Fgk0cCfOxbkk0rzRPwxuMacRfDYTzvH2NQx_4d0bmatSOa8eChGTQ_Fg5AUfUEjShx92ktG6nxPzNZb2uw-mVcSg?key=2GhdH-Aip7wH5rSx552uZQ)
 
-# Запуск скрипта и авторизация
+# Запускаем скрипт
 
 Создаем таблицу table.xlsx, заполняем 2, 3, 4 колонки и сохраняем таблицу  
 ![](https://lh7-us.googleusercontent.com/docsz/AD_4nXe6k5YWzOySI4N2rxuwgqrinXAi5YIZS2GhFWqvc-k8Oc9XMz7KJVXQM1EEz4tLvp3IhrP2GJXO-931bZeGF38IfSBXwEtci7WUIlugZkfu-jEUAS5hgiMtocIorvYEJvo2gljjvDeFMz65Vl8u3GiP22-n?key=2GhdH-Aip7wH5rSx552uZQ)
