@@ -54,5 +54,12 @@ first_post_id = 1
 last_post_id = 2884
 channel = "@itmemlib"
 
+![image](https://github.com/miroslav-kungurov/smm_tools/assets/56649199/83601135-7889-41dc-85c3-8b38570246ca)
+
 Запускаем скрипт, результат сохраняется в файл telegram_reactions.xlsx
+
+![image](https://github.com/miroslav-kungurov/smm_tools/assets/56649199/78abe5dd-3774-42e2-bc54-69f394b62267)
+
+
+
 
