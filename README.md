@@ -50,9 +50,9 @@ pip install -U tgcrypto
 Скрипт считает реакции на посты в одном тг-канале.
 
 Вводим значения:
-first_post_id = 1
-last_post_id = 2884
-channel = "@itmemlib"
+- first_post_id = 1
+- last_post_id = 2884
+- channel = "@itmemlib"
 
 ![image](https://github.com/miroslav-kungurov/smm_tools/assets/56649199/83601135-7889-41dc-85c3-8b38570246ca)
 
