@@ -4,6 +4,7 @@ import json
 from get_data_from_tg import process_channels
 from clean_json import clean
 from count_metrics import add_metrics_to_json
+from count_mediana import process_json_file
 
 def add_metrics_to_excel(input_excel, input_json, output_excel):
     # Чтение данных из JSON файла
@@ -18,6 +19,7 @@ def add_metrics_to_excel(input_excel, input_json, output_excel):
     df['subscribers'] = 0
     df['total_views'] = 0
     df['average_reach'] = 0.0
+    df['median_views'] = 0.0
     df['engagement_rate'] = 0.0
 
     # Обновление данных в DataFrame
@@ -31,10 +33,12 @@ def add_metrics_to_excel(input_excel, input_json, output_excel):
             df.at[index, 'subscribers'] = channel_data.get('subscribers', 0)
             df.at[index, 'total_views'] = channel_data.get('total_views', 0)
             df.at[index, 'average_reach'] = channel_data.get('average_reach', 0.0)
+            df.at[index, 'median_views'] = channel_data.get('median_views', 0.0)
             df.at[index, 'engagement_rate'] = channel_data.get('engagement_rate', 0.0)
 
+
     # Переименование столбцов
-    df.columns = ['Column1', 'Channel Link', 'Start ID', 'End ID', 'Post Count', 'Subscribers', 'Total Views', 'Average Reach', 'Engagement Rate']
+    df.columns = ['Column1', 'Channel Link', 'Start ID', 'End ID', 'Post Count', 'Subscribers', 'Total Views', 'Average Reach', 'Median', 'Engagement Rate']
 
     # Сохранение обновленных данных в новый Excel файл
     df.to_excel(output_excel, index=False)
@@ -45,4 +49,5 @@ if __name__ == "__main__":
     process_channels('table.xlsx', 'channels_data.json')
     clean(json_file='channels_data.json')
     add_metrics_to_json('filtered_channels_data.json', 'channels_data_with_metrics.json')
+    process_json_file('channels_data_with_metrics.json')
     add_metrics_to_excel('table.xlsx', 'channels_data_with_metrics.json', 'metrics.xlsx')
