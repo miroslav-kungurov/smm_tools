@@ -28,7 +28,7 @@ def get_channel_data(app, channel_link, start_id, end_id):
     for message_id in range(start_id, end_id + 1):
         try:
             message = app.get_messages(channel_name, message_id)
-            if message and not message.empty:
+            if message and not message.empty and message.views is not None:
                 posts_data[message_id] = {
                     "views": message.views,
                     "date": message.date.isoformat(),
@@ -46,6 +46,7 @@ def get_channel_data(app, channel_link, start_id, end_id):
         "subscribers": subscribers_count,
         "posts": posts_data
     }
+
 
 
 def process_channels(excel_file, output_json):
@@ -81,4 +82,3 @@ def process_channels(excel_file, output_json):
         json.dump(channels_data, f, ensure_ascii=False, indent=4)
 
     print(f"Данные сохранены в файл {output_json}")
-
