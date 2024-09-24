@@ -1,9 +1,19 @@
 # -*- coding: utf-8 -*-
 import openpyxl
 from pyrogram import Client
+from datetime import datetime, timedelta
 
 api_id = ''
 api_hash = ''
+
+# Задаем параметры непосредственно в коде
+months_period = 3  # Количество месяцев для сохранения постов
+first_post_id = 1
+last_post_id = 240
+channel = "@javaprogbook"
+
+# Вычисляем дату, начиная с которой нужно сохранять посты
+start_date = datetime.now() - timedelta(days=30*months_period)
 
 # Создаем новую книгу Excel
 workbook = openpyxl.Workbook()
@@ -13,24 +23,27 @@ sheet = workbook.active
 sheet['A1'] = 'Канал'
 sheet['B1'] = 'Ссылка на пост'
 sheet['C1'] = 'Количество просмотров'
-sheet['D1'] = 'Сумма реакций'
+sheet['D1'] = 'Количество репостов'
+sheet['E1'] = 'Сумма реакций'
+sheet['F1'] = 'Дата публикации'
 
 # Счетчик строк и столбцов
 row = 2
-column = 5  # Столбцы с эмодзи начинаются с пятого столбца
+column = 7  # Столбцы с эмодзи начинаются с седьмого столбца
 
 # Словарь для хранения всех возможных реакций
 all_reactions = {}
 
-first_post_id = 1
-last_post_id = 9248
-channel = "@progbook"
-
 with Client("my_account", api_id, api_hash) as client:
-    for message_id in range(first_post_id, last_post_id):
+    for message_id in range(first_post_id, last_post_id + 1):
         print('ID поста: ', message_id)
         try:
             message = client.get_messages(chat_id=channel, message_ids=message_id)
+
+            # Проверяем дату поста
+            if message.date < start_date:
+                print(f"Пропускаем пост {message_id} (старше {months_period} месяцев)")
+                continue
 
             # Проверяем количество просмотров
             views = message.views if message.views is not None else 0
@@ -50,6 +63,10 @@ with Client("my_account", api_id, api_hash) as client:
             # Заполняем третий столбец количеством просмотров
             sheet.cell(row=row, column=3, value=views)
 
+            # Заполняем четвертый столбец количеством репостов
+            forwards = message.forwards if message.forwards is not None else 0
+            sheet.cell(row=row, column=4, value=forwards)
+
             # Проверяем, есть ли реакции на сообщение
             total_reactions = 0
             if message.reactions:
@@ -63,8 +80,12 @@ with Client("my_account", api_id, api_hash) as client:
                         column += 1
                     sheet.cell(row=row, column=all_reactions[emoji], value=count)
 
-            # Записываем сумму реакций в четвертый столбец
-            sheet.cell(row=row, column=4, value=total_reactions)
+            # Записываем сумму реакций в пятый столбец
+            sheet.cell(row=row, column=5, value=total_reactions)
+
+            # Записываем дату публикации в шестой столбец
+            date = message.date.strftime("%Y-%m-%d %H:%M:%S")
+            sheet.cell(row=row, column=6, value=date)
 
             row += 1
         except Exception as e:
@@ -72,10 +93,12 @@ with Client("my_account", api_id, api_hash) as client:
 
 # Заполняем нулями отсутствующие реакции
 for r in range(2, row):
-    for c in range(5, column):
+    for c in range(7, column):
         if sheet.cell(row=r, column=c).value is None:
             sheet.cell(row=r, column=c, value=0)
 
 # Сохраняем книгу Excel
-xlsx_name = channel[1:] + "_telegram_reactions.xlsx"
+xlsx_name = f"{channel[1:]}_telegram_stats_{months_period}months.xlsx"
 workbook.save(xlsx_name)
+
+print(f"Данные сохранены в файл: {xlsx_name}")
