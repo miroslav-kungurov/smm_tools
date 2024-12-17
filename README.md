@@ -44,7 +44,8 @@ pip install -U tgcrypto
 
 Результат сохраняется в файл metrics.xlsx
 
-![](https://lh7-us.googleusercontent.com/docsz/AD_4nXfjNM5prU_F3qFPNqUmsLtNnwmr-wfS86Y3x24yBuvoiFU8gUKpM3HcyX3q-nih7xiGDCZ5IfEhpR_v2QJFbLuAVKqIg_7j5A0iFtHBtqZSSI0ky9idBSaAH253LwGXn3o4D75PN_b5BLqkYKKGhQvYjr67?key=2GhdH-Aip7wH5rSx552uZQ)
+![image](https://github.com/user-attachments/assets/205c4d16-3c00-4bf3-ae9e-92c75f46c9a8)
+
 
 Второй скрипт count by date фильтрует по дате
 ![image](https://github.com/user-attachments/assets/4a98bcba-cf3f-47e4-b2d0-cb7e87d496be)
