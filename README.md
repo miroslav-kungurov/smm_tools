@@ -1,7 +1,8 @@
 # Устанавливаем библиотеки
 
-pip install pandas pyrogram openpyxl  
-pip install -U tgcrypto
+pip install https://github.com/KurimuzonAkuma/pyrogram/archive/v2.1.33.zip --force-reinstall  
+pip install pandas openpyxl  
+pip install -U tgcrypto  
 
 # Создаем приложение в ТГ
 
