@@ -1,6 +1,6 @@
 # Устанавливаем библиотеки
 
-pip install pandas pyrogram openpyxl
+pip install pandas pyrogram openpyxl  
 pip install -U tgcrypto
 
 # Создаем приложение в ТГ
