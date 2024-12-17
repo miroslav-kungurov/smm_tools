@@ -20,7 +20,8 @@ pip install -U tgcrypto
 # Запускаем скрипт tg_err_count.py из папки count err by id
 
 Создаем таблицу table.xlsx, заполняем 2, 3, 4 колонки и сохраняем таблицу  
-![](https://lh7-us.googleusercontent.com/docsz/AD_4nXe6k5YWzOySI4N2rxuwgqrinXAi5YIZS2GhFWqvc-k8Oc9XMz7KJVXQM1EEz4tLvp3IhrP2GJXO-931bZeGF38IfSBXwEtci7WUIlugZkfu-jEUAS5hgiMtocIorvYEJvo2gljjvDeFMz65Vl8u3GiP22-n?key=2GhdH-Aip7wH5rSx552uZQ)
+![image](https://github.com/user-attachments/assets/aa73a6a3-e4e4-4909-baf0-a785c2cd9808)
+
 
 Копируем таблицу table.xlsx в папку со скриптом.
 
@@ -44,12 +45,15 @@ pip install -U tgcrypto
 
 Результат сохраняется в файл metrics.xlsx
 
-![image](https://github.com/user-attachments/assets/205c4d16-3c00-4bf3-ae9e-92c75f46c9a8)
+![image](https://github.com/user-attachments/assets/abb4e115-5e8b-4499-af7a-e1426753464c)
 
 
-Второй скрипт count by date фильтрует по дате
+
+# Второй скрипт count by date фильтрует по дате
 ![image](https://github.com/user-attachments/assets/4a98bcba-cf3f-47e4-b2d0-cb7e87d496be)
 
+# Результат сохраняется в файл metrics.xlsx
+![image](https://github.com/user-attachments/assets/205c4d16-3c00-4bf3-ae9e-92c75f46c9a8)
 
 # Запускаем скрипт tg_reactions_count.py
 Скрипт считает реакции на посты в одном тг-канале.
