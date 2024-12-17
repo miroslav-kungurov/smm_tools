@@ -59,7 +59,8 @@ pip install -U tgcrypto
 
 Запускаем скрипт, результат сохраняется в файл telegram_reactions.xlsx
 
-![image](https://github.com/user-attachments/assets/29f75cb1-2b86-4893-8122-57875ed4da6f)
+![image](https://github.com/user-attachments/assets/a459cbc2-b6e8-4bd6-bac0-8f282f46ea2a)
+
 
 
 
