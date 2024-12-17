@@ -1,6 +1,6 @@
 # Устанавливаем библиотеки
 
-pip install https://github.com/KurimuzonAkuma/pyrogram/archive/v2.1.33.zip --force-reinstall  
+pip install https://github.com/KurimuzonAkuma/pyrogram/archive/v2.1.34.zip --force-reinstall    
 pip install pandas openpyxl  
 pip install -U tgcrypto  
 
